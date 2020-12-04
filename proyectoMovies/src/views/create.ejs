@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %>
+
+<body>
+
+    <%- include('./partials/header')  %>
+
+    <section class = contenedor-create>
+        <h2 class="titulo-create">Crear Pelicula</h2>
+        <form action='/movies/create' method='POST' class="form-create">
+            <label for="">Title</label>
+            <input type="text" name="title">
+            <label for="">Rating</label>
+            <input type="text" name="rating">
+            <label for="">Awards</label>
+            <input type="text" name="awards">
+            <label for="">Release Date</label>
+            <input type="text" name="release_date">
+            <label for="">Length</label>
+            <input type="text" name="length">
+            <label for="">Genre</label>
+            <div class="contenedor-select-create">
+                <select name="genre_id" class="select-generos">
+                    <% genres.forEach(genero => { %>
+                        <option class="option-create" value="<%=genero.id %>"><%=genero.name %></option>
+                    <% }) %>
+                </select>
+                <label for="">Actors</label>
+                <select name="actors" multiple class="select-actores">
+                    <% actors.forEach(actor => { %>
+                        <option class="option-actores-create" value="<%=actor.id %>"><%= actor.first_name %><%=actor.last_name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <button class= "boton-crear" type="submit">Crear Pelicula</button>
+      </section>
+    
+</body>
+</html>

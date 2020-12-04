@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %>
+
+<body>
+
+    <%- include('./partials/header')  %>
+
+    <section class = "contenedor-all">
+        <h2 class="titulo-all">Peliculas</h2>
+        <% movies.forEach(movie => { %>
+            <a href="movies/detail/<%=movie.id%>" class= "nombre-peliculas" ><%= movie.title%> </a>
+        <% }) %>
+      </section>
+    
+</body>
+</html>

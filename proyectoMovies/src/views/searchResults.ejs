@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %>
+
+<body>
+
+    <%- include('./partials/header')  %>
+
+    <section class = contenedor>
+        <h2>Busquedas encontradas</h2>
+        <% searchResults.forEach(movie => { %>
+            <a href="movies/detail/<%=movie.id%>" ><%= movie.title%> </a>
+        <% }) %>
+      </section>
+    
+</body>
+</html>

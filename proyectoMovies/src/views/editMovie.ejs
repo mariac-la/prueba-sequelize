@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %>
+
+<body>
+
+    <%- include('./partials/header')  %>
+
+    <section class = "contenedor-edit">
+        <h2 class="titulo-editar">Editar Pelicula</h2>
+        <form class="form-edit" action='/movies/edit/<%= toEdit.id %>?_method=PUT' method='POST'>
+            <label for="">Title</label>
+            <input type="text" name="title" value =<%= toEdit.title %>>
+            <label for="">Rating</label>
+            <input type="text" name="rating" value =<%= toEdit.rating %>>
+            <label for="">Awards</label>
+            <input type="text" name="awards" value =<%= toEdit.awards %>>
+            <label for="">Release Date</label>
+            <input type="text" name="release_date" value =<%= toEdit.release_date %>>
+            <label for="">Length</label>
+            <input type="text" name="length" value =<%= toEdit.length %>>
+            <label for="">Genre</label>
+            <div class="contenedor-select-edit">
+                <select name="genre_id" class="select-generos-edit">
+                    <% genres.forEach(genero => { %>
+                        <% if (toEdit.genreId === genero.id) {%>
+                            <option value="<%= genero.id %>" selected> <%= genero.name %></option>
+                            <% } else { %> 
+                            <option value="<%= genero.id %>"> <%= genero.name %></option>
+                            <% } %> 
+                    <% }) %>
+                </select>
+                <label for="">Actors</label>
+                <select name="actores" multiple class="select-actores-edit">
+                    <% actors.forEach(actor => { %>
+                        <% if (toEdit.actores.some(actorPelicula => actorPelicula.id == actor.id)){ %>
+                            <option value="<%=actor.id %>" selected><%= actor.first_name %><%=actor.last_name %></option>
+                        <% } else {%>
+                            <option value="<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %></option>
+                        <% } %> 
+                    <% }) %>
+                </select>
+            </div> 
+            <button class= "boton-editar" type="submit">Editar Pelicula</button>
+      </section>
+    
+</body>
+</html>
