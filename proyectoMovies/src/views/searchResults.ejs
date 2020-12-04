@@ -7,10 +7,10 @@
 
     <%- include('./partials/header')  %>
 
-    <section class = contenedor>
-        <h2>Busquedas encontradas</h2>
+    <section class = "contenedor-search">
+        <h2 class="titulo-search">Busquedas encontradas</h2>
         <% searchResults.forEach(movie => { %>
-            <a href="movies/detail/<%=movie.id%>" ><%= movie.title%> </a>
+            <a class="nombre-search" href="/detail/<%=movie.id%>" ><%= movie.title%> </a>
         <% }) %>
       </section>
     

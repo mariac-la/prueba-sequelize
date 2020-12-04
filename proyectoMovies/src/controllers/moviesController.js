@@ -50,7 +50,7 @@ module.exports = {
         try{
             let searchResults = await Movie.findAll({
                 where:{
-                    title:{[Op.like]: ('%' +req.body._+'%')}
+                    title:{[Op.like]: ('%' +req.body.busqueda+'%')}
                 }
             })
             res.render('searchResults',{searchResults});
