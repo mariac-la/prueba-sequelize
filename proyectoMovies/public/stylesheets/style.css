@@ -185,7 +185,6 @@
   color:#fff;
   font-size: 18px;
   text-decoration: none;
-  /*text-transform: uppercase;*/
   font-weight:bold;
   letter-spacing: 1px;
   font-family: Arial, Helvetica, sans-serif;
@@ -302,12 +301,11 @@
 
 .select-generos{
   background-color: rgb(189, 186, 186);
-  width: 290px;
+  width: 300px;
   height: 25px;
   text-align: center;
   border-color: transparent;
   margin-top: 10px;
-  margin-left: 300px;
   border-radius: 7px;
   margin-left: 510px;
   padding-left: 115px;
@@ -320,7 +318,7 @@
 
 .select-actores{
   background-color: rgb(189, 186, 186);
-  width: 290px;
+  width: 300px;
   height: 50px;
   text-align: center;
   border-color: transparent;
@@ -389,7 +387,7 @@
 
 .select-generos-edit{
   background-color: rgb(189, 186, 186);
-  width: 290px;
+  width: 300px;
   height: 25px;
   text-align: center;
   border-color: transparent;
@@ -407,7 +405,7 @@
 
 .select-actores-edit{
   background-color: rgb(189, 186, 186);
-  width: 290px;
+  width: 300px;
   height: 50px;
   text-align: center;
   border-color: transparent;
