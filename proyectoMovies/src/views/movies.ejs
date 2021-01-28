@@ -9,9 +9,20 @@
 
     <section class = "contenedor-all">
         <h2 class="titulo-all">Peliculas</h2>
-        <% movies.forEach(movie => { %>
-            <a href="movies/detail/<%=movie.id%>" class= "nombre-peliculas" ><%= movie.title%> </a>
-        <% }) %>
+        <div class= "contenedor-titulos">
+          <% movies.forEach(movie => { %>
+            <div class="contenedor-peliculas">
+              <div class="movies-img">
+                  <a href="movies/detail/<%=movie.id%>" class="imagen-hover">
+                    <img src="/images/iconoMovies2.png"  alt="" width="325" height="250">
+                  </a>   
+              </div>
+              <div class="titulo-peliculas">  
+                <a href="movies/detail/<%=movie.id%>" class= "nombre-peliculas" ><%= movie.title%> </a>
+              </div>
+            </div>
+          <% }) %>
+        </div>
       </section>
     
 </body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head')  %>
+
+  <body>
+
+    <%- include('./partials/header')  %>
+
+    <section class = "contenedor-actores">
+      <div>
+        <img src="/images/iconoActores.png" alt="" class="actor-img">
+      </div>
+      <div class="contenedor-detalle-actores">
+          <h1 class="titulo-actor"><%= actor.first_name %> <%= actor.last_name %> actuo en:</h1>
+          <% actor.movies.forEach(movie => { %>
+            <div class="contenedor-titulos-actores">
+              <a class = "link-pelicula" href = '/movies/detail/<%= movie.id %> '>  <%= movie.title %></a><br>
+            </div>
+          <% }) %>   
+      </div>     
+      </section>
+  </body>
+
+</html>
+

@@ -11,8 +11,15 @@
         <h2 class= "titulo-detail"><%= movieDetail.title %></h2>
         <p>Rating: <%= movieDetail.rating %></p>
         <p>Premios: <%= movieDetail.awards %></p>
-        <p>Duracion: <%= movieDetail.length %></p>
+        <p>Duracion: <%= movieDetail.length %> minutos</p>
         <p>Fecha de estreno: <%= movieDetail.release_date %></p>
+        <h3>Genero:</h3>
+        <p class="p-generos"><a href="/movies/genre/<%= movieDetail.Genre.id %> " >Genero : <%= movieDetail.Genre.name %></p></a><br>
+        
+        <h3>Actores:</h3>
+        <%for (let i = 0; i < movieDetail.actores.length; i++){%>
+      <p class="p-actores"><a href="/movies/actor/<%=movieDetail.actores[i].id%>"><%=movieDetail.actores[i].first_name%> <%=movieDetail.actores[i].last_name%></a></p>
+      <%}%>
         <div class = "contenedor-botones">
             <form action='/movies/edit/<%= movieDetail.id%>'  method= 'GET'>
             <button class= "editar-boton" type="submit">Editar</button>

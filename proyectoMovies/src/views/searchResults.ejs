@@ -9,9 +9,20 @@
 
     <section class = "contenedor-search">
         <h2 class="titulo-search">Busquedas encontradas</h2>
-        <% searchResults.forEach(movie => { %>
-            <a class="nombre-search" href="detail/<%=movie.id%>" ><%= movie.title%> </a>
-        <% }) %>
+        <div class="contenedor-titulos-search">
+          <% searchResults.forEach(movie => { %>
+            <div class="contenedor-peliculas-search">
+              <div class="movies-img-search">
+                <a href="detail/<%=movie.id%>" class="imagen-hover-search">
+                  <img src="/images/iconoMovies2.png"  alt="" width="325" height="250">
+                </a>   
+              </div>
+              <div class="titulo-peliculas-new">  
+                <a href="movies/detail/<%=movie.id%>" class= "nombre-new" ><%= movie.title%> </a>
+                </div>
+              </div>    
+          <% }) %>
+        </div>  
       </section>
     
 </body>

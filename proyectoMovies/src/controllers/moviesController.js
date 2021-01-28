@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const {Op} = require('sequelize');
 const {Movie, Genre, Actor} = require('../database/models');
+const { validationResult } = require('express-validator');
 
 module.exports = {
  
@@ -90,12 +91,20 @@ module.exports = {
     },
     update: async(req,res) => {
         try{
+            const results = validationResult(req);
+
+            if (results.isEmpty()) {
             const movieId = req.params.id;
             const changeMovie = await Movie.findByPk(movieId, {include:['Genre','actores']});
             await changeMovie.removeActores(changeMovie.actores);
             await changeMovie.addActores(req.body.actores);
             await changeMovie.update(req.body);
             res.redirect('/movies');
+            } else{
+            const genres = await Genre.findAll();
+            const actors = await Actor.findAll();
+            res.render('editMovie', {changeMovie, genres, actors, errors: results.errors, old: req.body})
+            }
         } catch(error) {
             console.log(error);
         }

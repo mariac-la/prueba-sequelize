@@ -9,13 +9,16 @@
 
     <section class = "contenedor-new">
       <h2 class="titulo-new">Estrenos</h2>
-      <% newReleases.forEach(movie => { %>
-        <a href="detail/<%=movie.id%>" class="nombre-new">
-            <p>
-                <%= movie.title %>
-            </p>
-        </a>
-      <% }) %>
+      <div class="contenedor-titulos-new">
+        <% newReleases.forEach(movie => { %>
+          <div class="contenedor-peliculas-new">
+            <a href="detail/<%=movie.id%>" class="imagen-hover-new">
+              <img src="/images/iconoMovies2.png"  alt="" width="325" height="250">
+            </a>  
+            <a href="detail/<%=movie.id%>" class="nombre-new"><%= movie.title %></a>
+          </div> 
+        <% }) %>
+      </div>  
     </section>
   </body>
 
